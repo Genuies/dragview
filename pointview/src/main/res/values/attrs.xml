@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DragView">
+        <attr name="big_circle" format="float"/>
+        <attr name="small_circle" format="float"/>
+        <attr name="back_color" format="color"/>
+        <attr name="auto_fit" format="boolean"/>
+    </declare-styleable>
+</resources>

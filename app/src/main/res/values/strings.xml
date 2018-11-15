@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyApplication</string>
+    <string name="action_settings">Settings</string>
+    <string name="accessibility_des">微信自动回复功能</string>
+    <string name="home">首页</string>
+    <string name="person">个人</string>
+    <string name="person_name_one">ZhangSan</string>
+    <string name="person_content_one">Do you have a time to eat a dinner?</string>
+    <string name="person_msg_one">3</string>
+    <string name="person_name_two">Stan Lee</string>
+    <string name="person_content_two">Sleep together at night?</string>
+    <string name="person_msg_two">10</string>
+</resources>

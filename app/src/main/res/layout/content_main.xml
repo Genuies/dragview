@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f1f1"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <RelativeLayout
+        android:id="@+id/person_one_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/person_header_one"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            app:srcCompat="@drawable/ic_person"/>
+
+        <TextView
+            android:id="@+id/person_name_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/person_header_one"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:textSize="14sp"
+            android:textColor="#1a1a1a"
+            android:text="@string/person_name_one"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/person_header_one"
+            android:layout_below="@id/person_name_one"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="5dp"
+            android:textSize="12sp"
+            android:textColor="#9c9c9c"
+            android:text="@string/person_content_one"/>
+
+        <zx.com.genius.cn.pointview.DragView
+            android:id="@+id/person_drag_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="#ffffff"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:text="@string/person_msg_one"
+            app:auto_fit="true"
+            app:big_circle="25"
+            app:small_circle="15"
+            app:back_color="@color/colorAccent"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#3a3a3a"
+        android:layout_below="@id/person_one_layout"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:layout_below="@id/person_one_layout">
+
+        <ImageView
+            android:id="@+id/person_header_two"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            app:srcCompat="@drawable/ic_person"/>
+
+        <TextView
+            android:id="@+id/person_name_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/person_header_two"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:textSize="14sp"
+            android:textColor="#1a1a1a"
+            android:text="@string/person_name_two"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/person_header_two"
+            android:layout_below="@id/person_name_two"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="5dp"
+            android:textSize="12sp"
+            android:textColor="#9c9c9c"
+            android:text="@string/person_content_two"/>
+
+        <zx.com.genius.cn.pointview.DragView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="#ffffff"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:text="@string/person_msg_two"
+            app:auto_fit="true"
+            app:big_circle="25"
+            app:small_circle="15"
+            app:back_color="@color/colorAccent"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#f3f3f3"
+                android:text="@string/home"
+                android:drawableTop="@android:drawable/ic_menu_add"
+                android:drawablePadding="5dp"
+                android:layout_centerInParent="true"/>
+            <zx.com.genius.cn.pointview.DragView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="8sp"
+                android:textColor="#ffffff"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="5dp"
+                android:text="201"
+                app:back_color="@color/colorAccent"
+                app:big_circle="15"
+                app:small_circle="8"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#f3f3f3"
+                android:text="@string/person"
+                android:drawableTop="@android:drawable/ic_lock_lock"
+                android:drawablePadding="5dp"
+                android:layout_centerInParent="true"/>
+            <zx.com.genius.cn.pointview.DragView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="8sp"
+                android:textColor="#ffffff"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="5dp"
+                android:text="102"
+                app:back_color="@color/colorAccent"
+                app:big_circle="15"
+                app:small_circle="8"
+                app:auto_fit="true"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
