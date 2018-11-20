@@ -1,5 +1,5 @@
 # dragview
-a draggable view for android, like the QQ message point
+a draggable view, like the QQ message point
 
 First, let's see the gif
 
@@ -29,23 +29,6 @@ the DragView extends TextView. It has four attributes:
 * small_circle: the small circle raduis
 * back_color: the circle color
 
-about the animation, I use [this](https://github.com/835127729/ViewExplosion)
+At last, I'm trying to put this to gradle
 
-To use this, int the gradle:
-
-Step 1. Add the JitPack repository to your build file
-```
-allprojects {
-    repositories {
-	...
-	maven { url 'https://jitpack.io' }
-    }
-}
-```
-Step 2. Add the dependency
-```
-dependencies {
-    implementation 'com.github.Genuies:dragview:1.0'
-}
-```
-
+about the animation, I use this(https://github.com/835127729/ViewExplosion)
