@@ -29,7 +29,7 @@ the DragView extends TextView. It has four attributes:
 * small_circle: the small circle raduis
 * back_color: the circle color
 
-about the animation, I use [this](https://github.com/835127729/ViewExplosion)
+about the animation, I use [this](https://github.com/ifadai/ParticleSmasher)
 
 To use this, int the gradle:
 
