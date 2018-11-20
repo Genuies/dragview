@@ -45,7 +45,7 @@ allprojects {
 Step 2. Add the dependency
 ```
 dependencies {
-    implementation 'com.github.Genuies:dragview:1.0'
+    implementation 'com.github.Genuies:dragview:v1.1'
 }
 ```
 
