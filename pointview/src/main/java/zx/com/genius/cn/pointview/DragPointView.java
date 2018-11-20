@@ -3,6 +3,7 @@ package zx.com.genius.cn.pointview;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -14,7 +15,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 
-import zx.com.genius.cn.pointview.factory.FallingParticleFactory;
+import com.fadai.particlesmasher.ParticleSmasher;
+import com.fadai.particlesmasher.SmashAnimator;
+
 import zx.com.genius.cn.pointview.listener.DragListener;
 import zx.com.genius.cn.pointview.util.Utils;
 
@@ -41,21 +44,9 @@ public class DragPointView extends View {
 
     private DragView mDragView;
     private DragListener mDragListener;
+    private ParticleSmasher mSmasher;
 
     private int statusHeight;
-
-    private ExplosionListener mListener = new ExplosionListener() {
-        @Override
-        public void explosionEnd() {
-            setVisibility(GONE);
-            mDragView.setVisibility(INVISIBLE);
-            mDragPointF.x = mStickPointF.x;
-            mDragPointF.y = mStickPointF.y;
-            if(mDragListener != null){
-                mDragListener.disappear();
-            }
-        }
-    };
 
     public DragPointView(Context context) {
         super(context);
@@ -76,6 +67,7 @@ public class DragPointView extends View {
         mTextPaint = new Paint();
         mTextPaint.setAntiAlias(true);
         statusHeight = getStatusBarHeight(getContext());
+        mSmasher = new ParticleSmasher((Activity)getContext());
     }
 
     @Override
@@ -214,9 +206,23 @@ public class DragPointView extends View {
         if(!beyondDis){
             upAnima();
         }else {
-            ExplosionField field = new ExplosionField(getContext(), new FallingParticleFactory());
-            field.setExplosionListener(mListener);
-            field.explode(this);
+            mSmasher.with(this)
+                    .setStyle(SmashAnimator.STYLE_DROP)
+                    .addAnimatorListener(new SmashAnimator.OnAnimatorListener() {
+                        @Override
+                        public void onAnimatorEnd() {
+                            super.onAnimatorEnd();
+                            mSmasher.reShowView(DragPointView.this);
+                            setVisibility(GONE);
+                            mDragView.setVisibility(INVISIBLE);
+                            mDragPointF.x = mStickPointF.x;
+                            mDragPointF.y = mStickPointF.y;
+                            if(mDragListener != null){
+                                mDragListener.disappear();
+                            }
+                        }
+                    })
+                    .start();
         }
     }
 
@@ -249,6 +255,7 @@ public class DragPointView extends View {
             }
         });
         if(Utils.evaluateTwoPointDis(mDragPointF, mStickPointF) < 10){
+            valueAnimator.setDuration(100);
         }else {
             valueAnimator.setDuration(300);
         }

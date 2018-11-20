@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.ifadai:particlesmasher-1.0.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/particlesmasher-1.0.1.aar/c3500b20d7f61437ebf748aa10e6b8f3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/particlesmasher-1.0.1.aar/c3500b20d7f61437ebf748aa10e6b8f3/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ifadai/particlesmasher/1.0.1/84c7a7cefb31b6a162bb09e693604dedf8b3bbba/particlesmasher-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
